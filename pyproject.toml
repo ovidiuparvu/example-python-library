@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "adder"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = []
+authors = [
+  { name = "Ovidiu Parvu", email = "ovidiu.parvu@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://github.com/Ovidiu Parvu/adder2#readme"
+Issues = "https://github.com/Ovidiu Parvu/adder2/issues"
+Source = "https://github.com/Ovidiu Parvu/adder2"
+
+[tool.hatch.version]
+path = "src/adder/__about__.py"
+
+[tool.coverage.run]
+source_pkgs = ["adder", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/adder/__about__.py",
+]
+
+[tool.coverage.paths]
+adder = ["src/adder/*"]
+tests = ["tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
